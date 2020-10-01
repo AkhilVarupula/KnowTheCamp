@@ -17,8 +17,7 @@ var commentRoutes= require("./routes/comments"),
 	indexRoutes=require("./routes/index");
 //seed the database
 //seedDB();
-//mongoose.connect("mongodb://localhost:27017/know_the_camp",{useUnifiedTopology: true, useNewUrlParser: true},);
-mongoose.connect("mongodb+srv://akhilvarupula:14bme0777@cluster0.et1r1.mongodb.net/know_the_camp?retryWrites=true&w=majority", {useUnifiedTopology: true, useNewUrlParser: true},);
+mongoose.connect(process.env.DATABASEURL, {useUnifiedTopology: true, useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
